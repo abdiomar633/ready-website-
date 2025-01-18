@@ -18,7 +18,6 @@ const Index = () => {
       block: 'start'
     });
     
-    // Show a toast notification
     toast({
       title: "Scrolling to Our Premium Projects",
       description: "Check out our latest work!",
@@ -29,42 +28,36 @@ const Index = () => {
     { 
       id: 1, 
       title: "Real Estate Agency Website", 
-      price: "£9,500", 
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
       link: "/examples/realestate"
     },
     { 
       id: 2, 
       title: "Personal Trainer Portfolio", 
-      price: "£6,000", 
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48",
       link: "/examples/trainer"
     },
     { 
       id: 3, 
       title: "Restaurant Website", 
-      price: "£7,000", 
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
       link: "/examples/restaurant"
     },
     { 
       id: 4, 
       title: "Law Firm Website", 
-      price: "£10,500", 
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
       link: "/examples/lawfirm"
     },
     { 
       id: 5, 
       title: "Medical Clinic Website", 
-      price: "£8,500", 
       image: "https://images.unsplash.com/photo-1516549655169-df83a0774514",
       link: "/examples/clinic"
     },
     { 
       id: 6, 
       title: "Architecture Studio Website", 
-      price: "£9,000", 
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
       link: "/examples/architecture"
     },
@@ -179,8 +172,7 @@ const Index = () => {
                   className="w-full h-[300px] object-cover" 
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-xl text-primary mb-4">{item.price}</p>
+                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
                   <Button 
                     onClick={() => handleViewProject(item.link, item.title)}
                     className="w-full"
