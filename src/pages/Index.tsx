@@ -52,6 +52,20 @@ const Index = () => {
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
       link: "https://example.com/lawfirm"
     },
+    { 
+      id: 5, 
+      title: "Medical Clinic Website", 
+      price: "£8,500", 
+      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514",
+      link: "https://example.com/clinic"
+    },
+    { 
+      id: 6, 
+      title: "Architecture Studio Website", 
+      price: "£9,000", 
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+      link: "https://example.com/architecture"
+    },
   ];
 
   const skills = [
@@ -219,3 +233,4 @@ const Index = () => {
 };
 
 export default Index;
+
