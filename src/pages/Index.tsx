@@ -26,31 +26,31 @@ const Index = () => {
   const portfolioItems = [
     { 
       id: 1, 
-      title: "E-commerce Platform", 
-      price: "£12,000", 
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      link: "https://example.com/ecommerce"
+      title: "Real Estate Agency Website", 
+      price: "£8,000", 
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+      link: "https://example.com/realestate"
     },
     { 
       id: 2, 
-      title: "SaaS Dashboard", 
-      price: "£15,000", 
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      link: "https://example.com/saas"
+      title: "Personal Trainer Portfolio", 
+      price: "£6,000", 
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48",
+      link: "https://example.com/trainer"
     },
     { 
       id: 3, 
-      title: "Mobile App", 
-      price: "£10,000", 
-      image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9",
-      link: "https://example.com/mobile"
+      title: "Restaurant Website", 
+      price: "£7,000", 
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      link: "https://example.com/restaurant"
     },
     { 
       id: 4, 
-      title: "Corporate Website", 
-      price: "£8,000", 
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      link: "https://example.com/corporate"
+      title: "Law Firm Website", 
+      price: "£9,000", 
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
+      link: "https://example.com/lawfirm"
     },
   ];
 
