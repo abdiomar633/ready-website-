@@ -3,17 +3,41 @@ import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft, ExternalLink } from "lucide-react";
 
 const Index = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const { toast } = useToast();
   
   const portfolioItems = [
-    { id: 1, title: "E-commerce Platform", price: "£12,000", image: "https://placehold.co/600x400/6366f1/white?text=E-commerce" },
-    { id: 2, title: "SaaS Dashboard", price: "£15,000", image: "https://placehold.co/600x400/8b5cf6/white?text=SaaS" },
-    { id: 3, title: "Mobile App", price: "£10,000", image: "https://placehold.co/600x400/3b82f6/white?text=Mobile" },
-    { id: 4, title: "Corporate Website", price: "£8,000", image: "https://placehold.co/600x400/06b6d4/white?text=Corporate" },
+    { 
+      id: 1, 
+      title: "E-commerce Platform", 
+      price: "£12,000", 
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      link: "https://example.com/ecommerce"
+    },
+    { 
+      id: 2, 
+      title: "SaaS Dashboard", 
+      price: "£15,000", 
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      link: "https://example.com/saas"
+    },
+    { 
+      id: 3, 
+      title: "Mobile App", 
+      price: "£10,000", 
+      image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9",
+      link: "https://example.com/mobile"
+    },
+    { 
+      id: 4, 
+      title: "Corporate Website", 
+      price: "£8,000", 
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      link: "https://example.com/corporate"
+    },
   ];
 
   const skills = [
@@ -28,6 +52,14 @@ const Index = () => {
         description: `Your consultation is scheduled for ${date.toLocaleDateString()}`,
       });
     }
+  };
+
+  const handleViewProject = (link: string, title: string) => {
+    toast({
+      title: "Opening Project",
+      description: `Redirecting to ${title}...`,
+    });
+    window.open(link, '_blank');
   };
 
   return (
@@ -59,7 +91,7 @@ const Index = () => {
       {/* Portfolio Section */}
       <section className="py-20 px-4">
         <h2 className="text-4xl font-bold mb-12 text-center">Our Premium Projects</h2>
-        <div className="portfolio-scroll">
+        <div className="portfolio-scroll flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-4">
           {portfolioItems.map((item) => (
             <motion.div
               key={item.id}
@@ -67,11 +99,21 @@ const Index = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="bg-muted rounded-lg overflow-hidden">
-                <img src={item.image} alt={item.title} className="w-full h-[300px] object-cover" />
+              <div className="bg-muted rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-[300px] object-cover" 
+                />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-xl text-primary">{item.price}</p>
+                  <p className="text-xl text-primary mb-4">{item.price}</p>
+                  <Button 
+                    onClick={() => handleViewProject(item.link, item.title)}
+                    className="w-full"
+                  >
+                    View Project <ExternalLink className="ml-2" />
+                  </Button>
                 </div>
               </div>
             </motion.div>
