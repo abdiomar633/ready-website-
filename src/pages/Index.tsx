@@ -27,7 +27,7 @@ const Index = () => {
     { 
       id: 1, 
       title: "Real Estate Agency Website", 
-      price: "£8,000", 
+      price: "£9,500", 
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
       link: "https://example.com/realestate"
     },
@@ -48,7 +48,7 @@ const Index = () => {
     { 
       id: 4, 
       title: "Law Firm Website", 
-      price: "£9,000", 
+      price: "£10,500", 
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
       link: "https://example.com/lawfirm"
     },
