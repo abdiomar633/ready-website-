@@ -177,7 +177,7 @@ const Index = () => {
                     onClick={() => handleViewProject(item.link, item.title)}
                     className="w-full"
                   >
-                    View Project <ExternalLink className="ml-2" />
+                    Mini Overview on Work <ExternalLink className="ml-2" />
                   </Button>
                 </div>
               </div>
