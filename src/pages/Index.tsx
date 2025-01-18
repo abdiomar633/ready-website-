@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft, ExternalLink, Waves } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const { toast } = useToast();
   const portfolioRef = useRef<HTMLElement>(null);
+  const navigate = useNavigate();
   
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({ 
@@ -29,42 +31,42 @@ const Index = () => {
       title: "Real Estate Agency Website", 
       price: "£9,500", 
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
-      link: "https://example.com/realestate"
+      link: "/examples/realestate"
     },
     { 
       id: 2, 
       title: "Personal Trainer Portfolio", 
       price: "£6,000", 
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48",
-      link: "https://example.com/trainer"
+      link: "/examples/trainer"
     },
     { 
       id: 3, 
       title: "Restaurant Website", 
       price: "£7,000", 
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-      link: "https://example.com/restaurant"
+      link: "/examples/restaurant"
     },
     { 
       id: 4, 
       title: "Law Firm Website", 
       price: "£10,500", 
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
-      link: "https://example.com/lawfirm"
+      link: "/examples/lawfirm"
     },
     { 
       id: 5, 
       title: "Medical Clinic Website", 
       price: "£8,500", 
       image: "https://images.unsplash.com/photo-1516549655169-df83a0774514",
-      link: "https://example.com/clinic"
+      link: "/examples/clinic"
     },
     { 
       id: 6, 
       title: "Architecture Studio Website", 
       price: "£9,000", 
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-      link: "https://example.com/architecture"
+      link: "/examples/architecture"
     },
   ];
 
@@ -84,10 +86,10 @@ const Index = () => {
 
   const handleViewProject = (link: string, title: string) => {
     toast({
-      title: "Opening Project",
-      description: `Redirecting to ${title}...`,
+      title: "Opening Project Example",
+      description: `Loading ${title} example...`,
     });
-    window.open(link, '_blank');
+    navigate(link);
   };
 
   return (
@@ -233,4 +235,3 @@ const Index = () => {
 };
 
 export default Index;
-
