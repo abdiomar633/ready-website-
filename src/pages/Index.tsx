@@ -130,7 +130,7 @@ const Index = () => {
           </motion.p>
           <Button 
             size="lg" 
-            className="text-lg"
+            className="text-lg rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-opacity-90 hover:bg-opacity-100"
             onClick={scrollToPortfolio}
           >
             View Our Work
