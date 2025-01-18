@@ -67,6 +67,13 @@ const Index = () => {
       {/* Hero Section */}
       <section className="gradient-bg h-screen flex items-center justify-center px-4 text-center">
         <div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl md:text-3xl mb-4 text-primary"
+          >
+            Web Waves Design
+          </motion.h2>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
