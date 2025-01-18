@@ -3,7 +3,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft, ExternalLink, Wave } from "lucide-react";
+import { ChevronRight, ChevronLeft, ExternalLink, Waves } from "lucide-react";
 
 const Index = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -74,10 +74,10 @@ const Index = () => {
           >
             <div className="relative inline-block">
               <motion.div
-                className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-75 blur-lg"
+                className="absolute -inset-1 bg-gradient-to-r from-white/20 via-white/40 to-white/20 opacity-75 blur-lg"
                 animate={{
                   scale: [1, 1.1, 1],
-                  opacity: [0.5, 0.8, 0.5]
+                  opacity: [0.3, 0.5, 0.3]
                 }}
                 transition={{
                   duration: 3,
@@ -85,15 +85,18 @@ const Index = () => {
                   repeatType: "reverse"
                 }}
               />
-              <h2 className="relative text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent p-2">
-                Web Waves Design
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                />
-              </h2>
+              <div className="relative flex items-center justify-center gap-2">
+                <Waves className="w-8 h-8 text-white/90" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white/90 p-2">
+                  Web Waves Design
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-white/50"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  />
+                </h2>
+              </div>
             </div>
           </motion.div>
           <motion.h1 
