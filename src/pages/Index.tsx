@@ -3,7 +3,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft, ExternalLink } from "lucide-react";
+import { ChevronRight, ChevronLeft, ExternalLink, Wave } from "lucide-react";
 
 const Index = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -67,13 +67,35 @@ const Index = () => {
       {/* Hero Section */}
       <section className="gradient-bg h-screen flex items-center justify-center px-4 text-center">
         <div>
-          <motion.h2 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl md:text-3xl mb-4 text-primary"
+            className="mb-8 relative"
           >
-            Web Waves Design
-          </motion.h2>
+            <div className="relative inline-block">
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-75 blur-lg"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              />
+              <h2 className="relative text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent p-2">
+                Web Waves Design
+                <motion.div
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary via-secondary to-accent"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+              </h2>
+            </div>
+          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
