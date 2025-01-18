@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
@@ -8,6 +8,20 @@ import { ChevronRight, ChevronLeft, ExternalLink, Waves } from "lucide-react";
 const Index = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const { toast } = useToast();
+  const portfolioRef = useRef<HTMLElement>(null);
+  
+  const scrollToPortfolio = () => {
+    portfolioRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+    
+    // Show a toast notification
+    toast({
+      title: "Scrolling to Our Premium Projects",
+      description: "Check out our latest work!",
+    });
+  };
   
   const portfolioItems = [
     { 
@@ -114,14 +128,25 @@ const Index = () => {
           >
             Premium web solutions for ambitious brands
           </motion.p>
-          <Button size="lg" className="text-lg">
+          <Button 
+            size="lg" 
+            className="text-lg"
+            onClick={scrollToPortfolio}
+          >
             View Our Work
           </Button>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-4">
+      <motion.section 
+        ref={portfolioRef}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="py-20 px-4"
+      >
         <h2 className="text-4xl font-bold mb-12 text-center">Our Premium Projects</h2>
         <div className="portfolio-scroll flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-4">
           {portfolioItems.map((item) => (
@@ -151,7 +176,7 @@ const Index = () => {
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
       <section className="py-20 px-4 relative overflow-hidden">
