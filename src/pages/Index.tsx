@@ -3,7 +3,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft, ExternalLink, Waves } from "lucide-react";
+import { ChevronRight, ChevronLeft, ExternalLink, Waves, Palette, Database, Cloud } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -85,6 +85,24 @@ const Index = () => {
     navigate(link);
   };
 
+  const services = [
+    {
+      icon: <Palette className="w-12 h-12 text-primary" />,
+      title: "UI/UX Design Excellence",
+      description: "Creating intuitive, beautiful interfaces that delight users and drive engagement. Our design process combines aesthetics with functionality for maximum impact."
+    },
+    {
+      icon: <Database className="w-12 h-12 text-primary" />,
+      title: "API Integration Mastery",
+      description: "Seamlessly connecting your applications with third-party services and databases. We ensure robust, secure, and efficient data flow across your digital ecosystem."
+    },
+    {
+      icon: <Cloud className="w-12 h-12 text-primary" />,
+      title: "SaaS Product Development",
+      description: "Building scalable, cloud-native software solutions that grow with your business. From concept to deployment, we create SaaS products that deliver value."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -145,6 +163,34 @@ const Index = () => {
             View Our Work
           </Button>
         </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-4 bg-muted/30">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto"
+        >
+          <h2 className="text-4xl font-bold mb-12 text-center">Our Core Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-background p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="mb-4 flex justify-center">{service.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 text-center">{service.title}</h3>
+                <p className="text-muted-foreground text-center">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
       {/* Portfolio Section */}
