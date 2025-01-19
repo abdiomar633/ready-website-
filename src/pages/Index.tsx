@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import { Calendar } from "@/components/ui/calendar";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
@@ -7,7 +6,6 @@ import { ChevronRight, ChevronLeft, ExternalLink, Waves, Palette, Database, Clou
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
   const { toast } = useToast();
   const portfolioRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
@@ -102,6 +100,18 @@ const Index = () => {
       description: "Building scalable, cloud-native software solutions that grow with your business. From concept to deployment, we create SaaS products that deliver value."
     }
   ];
+
+  useEffect(() => {
+    // Add Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -253,19 +263,12 @@ const Index = () => {
       {/* Booking Section */}
       <section className="py-20 px-4">
         <h2 className="text-4xl font-bold mb-12 text-center">Book a Consultation</h2>
-        <div className="max-w-md mx-auto bg-muted p-6 rounded-lg">
-          <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="bg-background rounded-lg p-4"
+        <div className="max-w-4xl mx-auto">
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/abdirahmanao0961/30min?preview_source=et_card&month=2025-01"
+            style={{ minWidth: '320px', height: '700px' }}
           />
-          <Button 
-            className="w-full mt-4" 
-            onClick={() => handleBooking(date)}
-          >
-            Book Consultation
-          </Button>
         </div>
       </section>
     </div>
