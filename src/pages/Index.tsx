@@ -135,7 +135,7 @@ const Index = () => {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl mb-8"
           >
-            Premium web solutions for ambitious brands
+            Transforming Visions into Stunning Digital Experiences That Drive Results
           </motion.p>
           <Button 
             size="lg" 
