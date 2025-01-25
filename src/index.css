@@ -49,10 +49,9 @@
 }
 
 .portfolio-scroll {
-  @apply flex gap-8 overflow-x-auto pb-8;
+  @apply flex gap-8 overflow-x-auto pb-8 snap-x snap-mandatory;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  width: max-content;
 }
 
 .portfolio-scroll::-webkit-scrollbar {
