@@ -217,7 +217,7 @@ const Index = () => {
           {portfolioItems.map((item) => (
             <motion.div
               key={item.id}
-              className="min-w-[300px] md:min-w-[600px] snap-center"
+              className="min-w-[250px] md:min-w-[400px] snap-center"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -225,7 +225,7 @@ const Index = () => {
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-[300px] object-cover" 
+                  className="w-full h-[250px] object-cover" 
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
