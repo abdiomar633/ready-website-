@@ -52,25 +52,11 @@
   @apply flex gap-8 overflow-x-auto pb-8;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  animation: scroll 40s linear infinite;
   width: max-content;
-}
-
-.portfolio-scroll:hover {
-  animation-play-state: paused;
 }
 
 .portfolio-scroll::-webkit-scrollbar {
   display: none;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 .floating-skill {
