@@ -175,6 +175,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Website Importance Section */}
+      <section className="py-20 px-4 bg-muted/10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto text-center"
+        >
+          <h2 className="text-4xl font-bold mb-8">Why Your Business Needs a Website</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+            <div className="p-6 bg-background rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-3">24/7 Accessibility</h3>
+              <p className="text-muted-foreground">Your website works around the clock, allowing customers to learn about your services and make purchases at any time, even outside business hours.</p>
+            </div>
+            <div className="p-6 bg-background rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-3">Credibility & Trust</h3>
+              <p className="text-muted-foreground">A professional website establishes legitimacy and builds trust with potential customers. In today's digital age, businesses without websites may be seen as less credible.</p>
+            </div>
+            <div className="p-6 bg-background rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-3">Global Reach</h3>
+              <p className="text-muted-foreground">Break geographical barriers and reach customers worldwide. A website allows your business to expand its market beyond local boundaries.</p>
+            </div>
+            <div className="p-6 bg-background rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-3">Cost-Effective Marketing</h3>
+              <p className="text-muted-foreground">Websites provide one of the most cost-effective ways to showcase your products and services, requiring minimal investment compared to traditional advertising.</p>
+            </div>
+            <div className="p-6 bg-background rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-3">Customer Insights</h3>
+              <p className="text-muted-foreground">Gather valuable data about your customers' behavior and preferences through website analytics, helping you make informed business decisions.</p>
+            </div>
+            <div className="p-6 bg-background rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-3">Competitive Advantage</h3>
+              <p className="text-muted-foreground">Stay ahead of competitors who might not have an online presence. A well-designed website can set you apart in your industry.</p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 px-4 bg-muted/30">
         <motion.div
