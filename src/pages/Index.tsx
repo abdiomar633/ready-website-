@@ -280,6 +280,59 @@ const Index = () => {
         </div>
       </motion.section>
 
+      {/* Featured Work Showcase */}
+      <section className="py-20 px-4 bg-muted/10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto text-center"
+        >
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-6xl font-bold mb-6 text-foreground"
+          >
+            Web Waves Design
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-2xl md:text-3xl mb-8 text-muted-foreground"
+          >
+            Websites that click!
+          </motion.p>
+          
+          {/* Device Showcase Area - Placeholder for images */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="my-16 h-96 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl flex items-center justify-center border-2 border-dashed border-primary/20"
+          >
+            <p className="text-muted-foreground text-lg">Device images will be placed here</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <Button 
+              size="lg" 
+              className="text-lg rounded-full px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              VIEW SERVICES
+            </Button>
+          </motion.div>
+        </motion.div>
+      </section>
+
       {/* Skills Section */}
       <section className="py-20 px-4 relative overflow-hidden">
         <h2 className="text-4xl font-bold mb-12 text-center">Our Expertise</h2>
